@@ -2,15 +2,14 @@ CHICO THAI CUISINE — redesigned website
 =======================================
 
 WHAT'S HERE
-  index.html    Home — hero slider, highlights, story, market teaser, reviews, map, FAQ
+  index.html    Home — hero slider, highlights, story, reviews, map, FAQ
   menu.html     Full menu (107 dishes) with live search, filters and sticky category nav
-  market.html   Thai Market / supermarket page (8 aisles)
   gallery.html  All 21 photos with a keyboard-accessible lightbox
   about.html    Story + why-choose-us + FAQ
-  contact.html  Contact details, message form, full-width map
+  contact.html  Contact details and full-width map
   accessibility.css / accessibility.js
                 Accessibility tools widget (same tools as Delhi to Kathmandu)
-  img/          Logo, slider, gallery, market photos, and the boons logo
+  img/          Logo, slider, gallery photos, and the boons logo
   robots.txt / sitemap.xml
 
 HOW TO PUT IT LIVE
@@ -24,9 +23,9 @@ TWO THINGS TO SWAP BEFORE YOU GO LIVE
 -------------------------------------
 1. ORDERING LINK
    Every "Order Online" button points to:
-       https://order.boons.io/site/chico-thai-cuisine
+       https://order.boons.io/site/chico-thai-cuisine/413/y
    Replace it with your real boons store URL. Find and replace that exact string
-   across all 6 HTML files — it appears in the header, drawer, hero slider,
+   across all 5 HTML files — it appears in the header, drawer, hero slider,
    mobile dock, every menu category, the CTA bands, the footer and the schema.
 
 2. MENU PRICES
@@ -50,7 +49,6 @@ SEO
     1. Authentic Thai Restaurant in Chico, CA
     2. Best Pad Thai & Curry Near Downtown Chico
     3. Fresh Thai Seafood, Noodles & Chef's Specials
-    4. Thai Market & Grocery Supermarket in Chico
   Each page has its own title, meta description, canonical, Open Graph tags.
   Restaurant schema.org JSON-LD (address, hours, phone, menu, order action)
   is embedded on every page.
@@ -61,5 +59,4 @@ EDITING LATER
                      near the bottom of each file — these drive the live
                      "Open now / Closed" badge)
   Phone / address    search for "530) 717-9108" and "407 Walnut"
-  Market aisles      market.html, the <article class="aisle"> blocks
   Colours            the :root block at the top of each <style> tag

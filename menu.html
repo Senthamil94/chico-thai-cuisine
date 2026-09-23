@@ -137,28 +137,27 @@ p{margin:0}
 @keyframes pulse-ink{70%{box-shadow:0 0 0 9px rgba(20,18,16,0)}100%{box-shadow:0 0 0 0 rgba(20,18,16,0)}}
 
 .hdr{
-  position:sticky;top:0;z-index:70;background:rgba(252,250,245,.86);
-  backdrop-filter:saturate(180%) blur(16px);-webkit-backdrop-filter:saturate(180%) blur(16px);
-  border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s,background .3s;
+  position:sticky;top:0;z-index:70;background:#231F20;color:#fff;
+  border-bottom:1px solid rgba(255,255,255,.08);transition:border-color .3s,box-shadow .3s,background .3s;
 }
-.hdr.stuck{border-bottom-color:var(--line);box-shadow:0 10px 30px -22px rgba(20,18,16,.5)}
+.hdr.stuck{border-bottom-color:rgba(242,220,158,.28);box-shadow:0 10px 30px -22px rgba(0,0,0,.7)}
 .hdr .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:74px}
 .brand{display:flex;align-items:center;gap:12px;padding:8px 0}
 .brand img{height:54px;width:auto;border-radius:6px;transition:transform .5s var(--ease)}
 .brand:hover img{transform:scale(1.05) rotate(-1deg)}
 .brand-txt{display:none}
-.brand-txt b{display:block;font-family:var(--font-d);font-size:1.02rem;letter-spacing:-.02em;line-height:1}
+.brand-txt b{display:block;font-family:var(--font-d);font-size:1.02rem;letter-spacing:-.02em;line-height:1;color:#fff}
 .brand-txt span{font-size:.64rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-1)}
 .nav{display:none}
 .nav a{
-  position:relative;padding:10px 2px;font-size:.92rem;font-weight:600;color:var(--ink-2);
+  position:relative;padding:10px 2px;font-size:.92rem;font-weight:600;color:rgba(255,255,255,.78);
   transition:color .25s;
 }
 .nav a::after{
   content:"";position:absolute;left:0;right:0;bottom:2px;height:2px;border-radius:2px;
   background:var(--gold-grad);transform:scaleX(0);transform-origin:right;transition:transform .45s var(--ease);
 }
-.nav a:hover,.nav a[aria-current="page"]{color:var(--ink)}
+.nav a:hover,.nav a[aria-current="page"]{color:#fff}
 .nav a:hover::after,.nav a[aria-current="page"]::after{transform:scaleX(1);transform-origin:left}
 .hdr-cta{display:none}
 .burger{
@@ -403,6 +402,7 @@ body.menu-open .drawer a.dl{animation:dIn .55s var(--ease) forwards}
   padding-bottom:14px;margin-bottom:18px;border-bottom:1px solid var(--line)}
 .mcat-head p{font-size:.85rem;color:var(--ink-3)}
 .mitems{display:grid;gap:2px}
+a.mi{color:inherit;cursor:pointer}
 .mi{
   display:grid;grid-template-columns:1fr auto;gap:4px 16px;align-items:start;
   padding:15px 14px;border-radius:14px;transition:background .3s;
@@ -644,11 +644,11 @@ body.menu-open .drawer a.dl{animation:dIn .55s var(--ease) forwards}
   <div class="wrap">
     <a class="brand" href="index.html" aria-label="Chico Thai Cuisine home">
       <img src="img/logo.png" alt="Chico Thai Cuisine logo" width="150" height="99">
-      <span class="brand-txt"><b>Chico Thai Cuisine</b><span>Restaurant &amp; Thai Market</span></span>
+      <span class="brand-txt"><b>Chico Thai Cuisine</b><span>Authentic Thai Restaurant</span></span>
     </a>
-    <nav class="nav" aria-label="Main"><a href="index.html">Home</a><a href="menu.html" aria-current="page">Menu</a><a href="market.html">Thai Market</a><a href="gallery.html">Gallery</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
+    <nav class="nav" aria-label="Main"><a href="index.html">Home</a><a href="menu.html" aria-current="page">Menu</a><a href="gallery.html">Gallery</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
     <div style="display:flex;gap:10px;align-items:center">
-      <a class="btn btn-gold btn-sm hdr-cta" href="https://order.boons.io/site/chico-thai-cuisine" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 4 6v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6l-2-4Z"/><path d="M4 6h16M16 10a4 4 0 0 1-8 0"/></svg> Order Online</a>
+      <a class="btn btn-gold btn-sm hdr-cta" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 4 6v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6l-2-4Z"/><path d="M4 6h16M16 10a4 4 0 0 1-8 0"/></svg> Order Online</a>
       <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
         <span></span><span></span><span></span>
       </button>
@@ -657,9 +657,9 @@ body.menu-open .drawer a.dl{animation:dIn .55s var(--ease) forwards}
 </header>
 
 <div class="drawer" id="drawer">
-  <a class="dl" href="index.html"><span>Home</span><i>01</i></a><a class="dl" href="menu.html"><span>Menu</span><i>02</i></a><a class="dl" href="market.html"><span>Thai Market</span><i>03</i></a><a class="dl" href="gallery.html"><span>Gallery</span><i>04</i></a><a class="dl" href="about.html"><span>About</span><i>05</i></a><a class="dl" href="contact.html"><span>Contact</span><i>06</i></a>
+  <a class="dl" href="index.html"><span>Home</span><i>01</i></a><a class="dl" href="menu.html"><span>Menu</span><i>02</i></a><a class="dl" href="gallery.html"><span>Gallery</span><i>03</i></a><a class="dl" href="about.html"><span>About</span><i>04</i></a><a class="dl" href="contact.html"><span>Contact</span><i>05</i></a>
   <div class="drawer-foot">
-    <a class="btn btn-gold btn-lg" href="https://order.boons.io/site/chico-thai-cuisine" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 4 6v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6l-2-4Z"/><path d="M4 6h16M16 10a4 4 0 0 1-8 0"/></svg> Order Online</a>
+    <a class="btn btn-gold btn-lg" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 4 6v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6l-2-4Z"/><path d="M4 6h16M16 10a4 4 0 0 1-8 0"/></svg> Order Online</a>
     <a class="btn btn-ghost" href="tel:+15307179108">(530) 717-9108 Call the restaurant</a>
     <p class="muted" style="font-size:.8rem">407 Walnut St., Ste. A-B. Chico, CA 95928<br>Mon–Sun · 11:00 AM – 8:30 PM</p>
   </div>
@@ -701,621 +701,621 @@ body.menu-open .drawer a.dl{animation:dIn .55s var(--ease) forwards}
     <section class="mcat" id="appetizers">
       <div class="mcat-head">
         <div><h2 class="h-m">Appetizers</h2><p>Small plates to open the table</p></div>
-        <a class="btn btn-ghost btn-sm" href="https://order.boons.io/site/chico-thai-cuisine" target="_blank" rel="noopener">Order</a>
+        <a class="btn btn-ghost btn-sm" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">Order</a>
       </div>
       <div class="mitems">
-        <div class="mi" data-search="chicken satay grilled skewered marinated chicken breast, cucumber salad & peanut sauce. appetizers" data-v="0" data-gf="1" data-s="0">
+        <a class="mi" data-search="chicken satay grilled skewered marinated chicken breast, cucumber salad & peanut sauce. appetizers" data-v="0" data-gf="1" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Chicken Satay <small>4 pcs</small>  <span class="tags"><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$11.95</div>
           <p class="mi-desc">Grilled skewered marinated chicken breast, cucumber salad &amp; peanut sauce.</p>
-        </div>
-        <div class="mi" data-search="avocado roll rice paper, avocado, cucumber, lettuce, carrots, mint, basil. peanut sauce. appetizers" data-v="1" data-gf="1" data-s="0">
+        </a>
+        <a class="mi" data-search="avocado roll rice paper, avocado, cucumber, lettuce, carrots, mint, basil. peanut sauce. appetizers" data-v="1" data-gf="1" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Avocado Roll <small>6 pcs</small>  <span class="tags"><span class="tg tg-v">Veg option</span><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$11.95</div>
           <p class="mi-desc">Rice paper, avocado, cucumber, lettuce, carrots, mint, basil. Peanut sauce.</p>
-        </div>
-        <div class="mi" data-search="fresh roll shrimp, tofu, cucumber, lettuce, mint, basil in rice paper. peanut sauce. appetizers" data-v="0" data-gf="1" data-s="0">
+        </a>
+        <a class="mi" data-search="fresh roll shrimp, tofu, cucumber, lettuce, mint, basil in rice paper. peanut sauce. appetizers" data-v="0" data-gf="1" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Fresh Roll <small>6 pcs</small>  <span class="tags"><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$11.95</div>
           <p class="mi-desc">Shrimp, tofu, cucumber, lettuce, mint, basil in rice paper. Peanut sauce.</p>
-        </div>
-        <div class="mi" data-search="veggie roll fried rolls of mixed vegetables and bean thread noodle. sweet & sour sauce. appetizers" data-v="1" data-gf="0" data-s="0">
+        </a>
+        <a class="mi" data-search="veggie roll fried rolls of mixed vegetables and bean thread noodle. sweet & sour sauce. appetizers" data-v="1" data-gf="0" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Veggie Roll <small>6 pcs</small>  <span class="tags"><span class="tg tg-v">Veg option</span></span></div>
           <div class="mi-price">$10.95</div>
           <p class="mi-desc">Fried rolls of mixed vegetables and bean thread noodle. Sweet &amp; sour sauce.</p>
-        </div>
-        <div class="mi" data-search="pot sticker steamed pot stickers with chicken, vegetable, green onion and garlic oil. appetizers" data-v="0" data-gf="0" data-s="0">
+        </a>
+        <a class="mi" data-search="pot sticker steamed pot stickers with chicken, vegetable, green onion and garlic oil. appetizers" data-v="0" data-gf="0" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Pot Sticker <small>6 pcs</small>  <span class="tags"></span></div>
           <div class="mi-price">$10.95</div>
           <p class="mi-desc">Steamed pot stickers with chicken, vegetable, green onion and garlic oil.</p>
-        </div>
-        <div class="mi" data-search="roti pan-fried puffy pastry served with yellow curry sauce. appetizers" data-v="1" data-gf="0" data-s="0">
+        </a>
+        <a class="mi" data-search="roti pan-fried puffy pastry served with yellow curry sauce. appetizers" data-v="1" data-gf="0" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Roti <small>16 pcs</small>  <span class="tags"><span class="tg tg-v">Veg option</span></span></div>
           <div class="mi-price">$10.95</div>
           <p class="mi-desc">Pan-fried puffy pastry served with yellow curry sauce.</p>
-        </div>
-        <div class="mi" data-search="crispy tofu crispy fried tofu with sweet & sour sauce and peanut sauce. appetizers" data-v="1" data-gf="0" data-s="0">
+        </a>
+        <a class="mi" data-search="crispy tofu crispy fried tofu with sweet & sour sauce and peanut sauce. appetizers" data-v="1" data-gf="0" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Crispy Tofu <small>10 pcs</small>  <span class="tags"><span class="tg tg-v">Veg option</span></span></div>
           <div class="mi-price">$10.95</div>
           <p class="mi-desc">Crispy fried tofu with sweet &amp; sour sauce and peanut sauce.</p>
-        </div>
-        <div class="mi" data-search="wings of love golden fried wings, chili and sweet & sour sauce, crispy basil. appetizers" data-v="0" data-gf="0" data-s="1">
+        </a>
+        <a class="mi" data-search="wings of love golden fried wings, chili and sweet & sour sauce, crispy basil. appetizers" data-v="0" data-gf="0" data-s="1" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Wings of Love <small>7 pcs</small> <span class="chilis" title="Spice level 1 of 3" aria-label="Spice level 1 of 3"><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg></span> <span class="tags"></span></div>
           <div class="mi-price">$12.95</div>
           <p class="mi-desc">Golden fried wings, chili and sweet &amp; sour sauce, crispy basil.</p>
-        </div>
-        <div class="mi" data-search="crab rangoon real crab meat, cream cheese, onion, carrots in crispy golden wonton. appetizers" data-v="0" data-gf="0" data-s="0">
+        </a>
+        <a class="mi" data-search="crab rangoon real crab meat, cream cheese, onion, carrots in crispy golden wonton. appetizers" data-v="0" data-gf="0" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Crab Rangoon <small>6 pcs</small>  <span class="tags"></span></div>
           <div class="mi-price">$12.95</div>
           <p class="mi-desc">Real crab meat, cream cheese, onion, carrots in crispy golden wonton.</p>
-        </div>
-        <div class="mi" data-search="coconut shrimp golden fried shrimp with coconut flakes. sweet & sour sauce. appetizers" data-v="0" data-gf="0" data-s="0">
+        </a>
+        <a class="mi" data-search="coconut shrimp golden fried shrimp with coconut flakes. sweet & sour sauce. appetizers" data-v="0" data-gf="0" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Coconut Shrimp <small>6 pcs</small>  <span class="tags"></span></div>
           <div class="mi-price">$12.95</div>
           <p class="mi-desc">Golden fried shrimp with coconut flakes. Sweet &amp; sour sauce.</p>
-        </div>
-        <div class="mi" data-search="prawn roll prawns with sesame oil, cilantro, glass noodles, black pepper in golden wonton. appetizers" data-v="0" data-gf="0" data-s="0">
+        </a>
+        <a class="mi" data-search="prawn roll prawns with sesame oil, cilantro, glass noodles, black pepper in golden wonton. appetizers" data-v="0" data-gf="0" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Prawn Roll <small>5 pcs</small>  <span class="tags"></span></div>
           <div class="mi-price">$12.95</div>
           <p class="mi-desc">Prawns with sesame oil, cilantro, glass noodles, black pepper in golden wonton.</p>
-        </div>
-        <div class="mi" data-search="fried calamari lightly battered calamari served with sweet chili sauce. appetizers" data-v="0" data-gf="0" data-s="0">
+        </a>
+        <a class="mi" data-search="fried calamari lightly battered calamari served with sweet chili sauce. appetizers" data-v="0" data-gf="0" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Fried Calamari  <span class="tags"></span></div>
           <div class="mi-price">$13.95</div>
           <p class="mi-desc">Lightly battered calamari served with sweet chili sauce.</p>
-        </div>
-        <div class="mi" data-search="soft shell crab deep fried soft shell crab served with mayo. appetizers" data-v="0" data-gf="0" data-s="0">
+        </a>
+        <a class="mi" data-search="soft shell crab deep fried soft shell crab served with mayo. appetizers" data-v="0" data-gf="0" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Soft Shell Crab  <span class="tags"></span></div>
           <div class="mi-price">$13.95</div>
           <p class="mi-desc">Deep fried soft shell crab served with mayo.</p>
-        </div></div>
+        </a></div>
     </section>
     <section class="mcat" id="salad">
       <div class="mcat-head">
         <div><h2 class="h-m">Salads</h2><p>Bright, herbal, citrus-forward</p></div>
-        <a class="btn btn-ghost btn-sm" href="https://order.boons.io/site/chico-thai-cuisine" target="_blank" rel="noopener">Order</a>
+        <a class="btn btn-ghost btn-sm" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">Order</a>
       </div>
       <div class="mitems">
-        <div class="mi" data-search="papaya salad shredded green papaya, tomatoes, carrots, green beans, ground peanuts. salads" data-v="1" data-gf="1" data-s="2">
+        <a class="mi" data-search="papaya salad shredded green papaya, tomatoes, carrots, green beans, ground peanuts. salads" data-v="1" data-gf="1" data-s="2" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Papaya Salad <span class="chilis" title="Spice level 2 of 3" aria-label="Spice level 2 of 3"><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg></span> <span class="tags"><span class="tg tg-v">Veg option</span><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$15.95</div>
           <p class="mi-desc">Shredded green papaya, tomatoes, carrots, green beans, ground peanuts.</p>
-        </div>
-        <div class="mi" data-search="mango salad green mango, green apple, red onion, carrots, cashew nuts, honey dressing. salads" data-v="1" data-gf="1" data-s="1">
+        </a>
+        <a class="mi" data-search="mango salad green mango, green apple, red onion, carrots, cashew nuts, honey dressing. salads" data-v="1" data-gf="1" data-s="1" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Mango Salad <span class="chilis" title="Spice level 1 of 3" aria-label="Spice level 1 of 3"><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg></span> <span class="tags"><span class="tg tg-v">Veg option</span><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$16.95</div>
           <p class="mi-desc">Green mango, green apple, red onion, carrots, cashew nuts, honey dressing.</p>
-        </div>
-        <div class="mi" data-search="silver noodle salad bean thread noodle, carrots, tomatoes, cilantro, onions, minced chicken. salads" data-v="0" data-gf="1" data-s="2">
+        </a>
+        <a class="mi" data-search="silver noodle salad bean thread noodle, carrots, tomatoes, cilantro, onions, minced chicken. salads" data-v="0" data-gf="1" data-s="2" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Silver Noodle Salad <span class="chilis" title="Spice level 2 of 3" aria-label="Spice level 2 of 3"><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg></span> <span class="tags"><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$16.95</div>
           <p class="mi-desc">Bean thread noodle, carrots, tomatoes, cilantro, onions, minced chicken.</p>
-        </div>
-        <div class="mi" data-search="chicken salad crispy noodle, chicken, tomatoes, apple, carrots, red onion, cucumber, mayo dressing. salads" data-v="0" data-gf="0" data-s="0">
+        </a>
+        <a class="mi" data-search="chicken salad crispy noodle, chicken, tomatoes, apple, carrots, red onion, cucumber, mayo dressing. salads" data-v="0" data-gf="0" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Chicken Salad  <span class="tags"></span></div>
           <div class="mi-price">$16.95</div>
           <p class="mi-desc">Crispy noodle, chicken, tomatoes, apple, carrots, red onion, cucumber, mayo dressing.</p>
-        </div>
-        <div class="mi" data-search="chicken larb ground chicken, red onion, mint, green onion, cilantro, roasted rice powder. salads" data-v="0" data-gf="1" data-s="2">
+        </a>
+        <a class="mi" data-search="chicken larb ground chicken, red onion, mint, green onion, cilantro, roasted rice powder. salads" data-v="0" data-gf="1" data-s="2" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Chicken Larb <span class="chilis" title="Spice level 2 of 3" aria-label="Spice level 2 of 3"><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg></span> <span class="tags"><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$16.95</div>
           <p class="mi-desc">Ground chicken, red onion, mint, green onion, cilantro, roasted rice powder.</p>
-        </div>
-        <div class="mi" data-search="beef larb ground beef, red onion, mint, green onion, cilantro, roasted rice powder. salads" data-v="0" data-gf="1" data-s="2">
+        </a>
+        <a class="mi" data-search="beef larb ground beef, red onion, mint, green onion, cilantro, roasted rice powder. salads" data-v="0" data-gf="1" data-s="2" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Beef Larb <span class="chilis" title="Spice level 2 of 3" aria-label="Spice level 2 of 3"><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg></span> <span class="tags"><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$18.95</div>
           <p class="mi-desc">Ground beef, red onion, mint, green onion, cilantro, roasted rice powder.</p>
-        </div>
-        <div class="mi" data-search="beef salad beef, chili paste, cucumber, green onion, tomatoes, carrots, cilantro, mint. salads" data-v="0" data-gf="1" data-s="2">
+        </a>
+        <a class="mi" data-search="beef salad beef, chili paste, cucumber, green onion, tomatoes, carrots, cilantro, mint. salads" data-v="0" data-gf="1" data-s="2" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Beef Salad <span class="chilis" title="Spice level 2 of 3" aria-label="Spice level 2 of 3"><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg></span> <span class="tags"><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$18.95</div>
           <p class="mi-desc">Beef, chili paste, cucumber, green onion, tomatoes, carrots, cilantro, mint.</p>
-        </div>
-        <div class="mi" data-search="calamari salad calamari, red onion, tomatoes, carrots, green onion & cilantro. salads" data-v="0" data-gf="1" data-s="2">
+        </a>
+        <a class="mi" data-search="calamari salad calamari, red onion, tomatoes, carrots, green onion & cilantro. salads" data-v="0" data-gf="1" data-s="2" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Calamari Salad <span class="chilis" title="Spice level 2 of 3" aria-label="Spice level 2 of 3"><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg></span> <span class="tags"><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$20.95</div>
           <p class="mi-desc">Calamari, red onion, tomatoes, carrots, green onion &amp; cilantro.</p>
-        </div>
-        <div class="mi" data-search="duck salad duck, cucumber, tomatoes, carrots, green onion, cilantro and mint. salads" data-v="0" data-gf="1" data-s="2">
+        </a>
+        <a class="mi" data-search="duck salad duck, cucumber, tomatoes, carrots, green onion, cilantro and mint. salads" data-v="0" data-gf="1" data-s="2" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Duck Salad <span class="chilis" title="Spice level 2 of 3" aria-label="Spice level 2 of 3"><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg></span> <span class="tags"><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$21.95</div>
           <p class="mi-desc">Duck, cucumber, tomatoes, carrots, green onion, cilantro and mint.</p>
-        </div></div>
+        </a></div>
     </section>
     <section class="mcat" id="soups">
       <div class="mcat-head">
         <div><h2 class="h-m">Soups</h2><p>Coconut, lemongrass, galangal</p></div>
-        <a class="btn btn-ghost btn-sm" href="https://order.boons.io/site/chico-thai-cuisine" target="_blank" rel="noopener">Order</a>
+        <a class="btn btn-ghost btn-sm" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">Order</a>
       </div>
       <div class="mitems">
-        <div class="mi" data-search="tom yum hot and sour soup with onion, carrot, mushrooms, green onion and cilantro. soups" data-v="0" data-gf="1" data-s="3">
+        <a class="mi" data-search="tom yum hot and sour soup with onion, carrot, mushrooms, green onion and cilantro. soups" data-v="0" data-gf="1" data-s="3" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Tom Yum <span class="chilis" title="Spice level 3 of 3" aria-label="Spice level 3 of 3"><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg></span> <span class="tags"><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$18.95</div>
           <p class="mi-desc">Hot and sour soup with onion, carrot, mushrooms, green onion and cilantro.</p>
-        </div>
-        <div class="mi" data-search="tom kha creamy coconut milk soup, onion, carrot, mushrooms, green onion, cilantro. soups" data-v="0" data-gf="1" data-s="1">
+        </a>
+        <a class="mi" data-search="tom kha creamy coconut milk soup, onion, carrot, mushrooms, green onion, cilantro. soups" data-v="0" data-gf="1" data-s="1" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Tom Kha <span class="chilis" title="Spice level 1 of 3" aria-label="Spice level 1 of 3"><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg></span> <span class="tags"><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$18.95</div>
           <p class="mi-desc">Creamy coconut milk soup, onion, carrot, mushrooms, green onion, cilantro.</p>
-        </div>
-        <div class="mi" data-search="wonton soup chicken wonton, bean sprouts, spring mix, green onion, cilantro, garlic oil. soups" data-v="0" data-gf="0" data-s="0">
+        </a>
+        <a class="mi" data-search="wonton soup chicken wonton, bean sprouts, spring mix, green onion, cilantro, garlic oil. soups" data-v="0" data-gf="0" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Wonton Soup <small>8 pcs</small>  <span class="tags"></span></div>
           <div class="mi-price">$18.95</div>
           <p class="mi-desc">Chicken wonton, bean sprouts, spring mix, green onion, cilantro, garlic oil.</p>
-        </div></div>
+        </a></div>
     </section>
     <section class="mcat" id="pho">
       <div class="mcat-head">
         <div><h2 class="h-m">Pho &amp; Noodle Soups</h2><p>Slow-built broth, rice noodles</p></div>
-        <a class="btn btn-ghost btn-sm" href="https://order.boons.io/site/chico-thai-cuisine" target="_blank" rel="noopener">Order</a>
+        <a class="btn btn-ghost btn-sm" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">Order</a>
       </div>
       <div class="mitems">
-        <div class="mi" data-search="vegetables pho rice noodle, broccoli, carrot, cabbage, cauliflower, bean sprout, garlic oil. pho & noodle soups" data-v="1" data-gf="1" data-s="0">
+        <a class="mi" data-search="vegetables pho rice noodle, broccoli, carrot, cabbage, cauliflower, bean sprout, garlic oil. pho & noodle soups" data-v="1" data-gf="1" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Vegetables Pho  <span class="tags"><span class="tg tg-v">Veg option</span><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$18.95</div>
           <p class="mi-desc">Rice noodle, broccoli, carrot, cabbage, cauliflower, bean sprout, garlic oil.</p>
-        </div>
-        <div class="mi" data-search="chicken pho rice noodle with chicken, bean sprouts, green onion, cilantro, garlic oil. pho & noodle soups" data-v="0" data-gf="1" data-s="0">
+        </a>
+        <a class="mi" data-search="chicken pho rice noodle with chicken, bean sprouts, green onion, cilantro, garlic oil. pho & noodle soups" data-v="0" data-gf="1" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Chicken Pho  <span class="tags"><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$18.95</div>
           <p class="mi-desc">Rice noodle with chicken, bean sprouts, green onion, cilantro, garlic oil.</p>
-        </div>
-        <div class="mi" data-search="beef pho rice noodle, sliced beef, beef stew, meatball, bean sprouts, garlic oil. pho & noodle soups" data-v="0" data-gf="1" data-s="0">
+        </a>
+        <a class="mi" data-search="beef pho rice noodle, sliced beef, beef stew, meatball, bean sprouts, garlic oil. pho & noodle soups" data-v="0" data-gf="1" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Beef Pho  <span class="tags"><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$19.95</div>
           <p class="mi-desc">Rice noodle, sliced beef, beef stew, meatball, bean sprouts, garlic oil.</p>
-        </div>
-        <div class="mi" data-search="tom yum noodle soup rice noodle in hot & sour soup, ground chicken, bean sprouts, ground peanut. pho & noodle soups" data-v="0" data-gf="1" data-s="3">
+        </a>
+        <a class="mi" data-search="tom yum noodle soup rice noodle in hot & sour soup, ground chicken, bean sprouts, ground peanut. pho & noodle soups" data-v="0" data-gf="1" data-s="3" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Tom Yum Noodle Soup <span class="chilis" title="Spice level 3 of 3" aria-label="Spice level 3 of 3"><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg></span> <span class="tags"><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$19.95</div>
           <p class="mi-desc">Rice noodle in hot &amp; sour soup, ground chicken, bean sprouts, ground peanut.</p>
-        </div>
-        <div class="mi" data-search="tom kha noodle soup rice noodle in coconut soup, sliced chicken, bean sprouts, garlic oil. pho & noodle soups" data-v="0" data-gf="1" data-s="1">
+        </a>
+        <a class="mi" data-search="tom kha noodle soup rice noodle in coconut soup, sliced chicken, bean sprouts, garlic oil. pho & noodle soups" data-v="0" data-gf="1" data-s="1" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Tom Kha Noodle Soup <span class="chilis" title="Spice level 1 of 3" aria-label="Spice level 1 of 3"><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg></span> <span class="tags"><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$19.95</div>
           <p class="mi-desc">Rice noodle in coconut soup, sliced chicken, bean sprouts, garlic oil.</p>
-        </div>
-        <div class="mi" data-search="duck noodle soup rice noodle with duck, bean sprouts, green onion, cilantro, garlic oil. pho & noodle soups" data-v="0" data-gf="1" data-s="0">
+        </a>
+        <a class="mi" data-search="duck noodle soup rice noodle with duck, bean sprouts, green onion, cilantro, garlic oil. pho & noodle soups" data-v="0" data-gf="1" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Duck Noodle Soup  <span class="tags"><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$22.95</div>
           <p class="mi-desc">Rice noodle with duck, bean sprouts, green onion, cilantro, garlic oil.</p>
-        </div></div>
+        </a></div>
     </section>
     <section class="mcat" id="noodles">
       <div class="mcat-head">
         <div><h2 class="h-m">Noodles</h2><p>Wok-fired, the house favourites</p></div>
-        <a class="btn btn-ghost btn-sm" href="https://order.boons.io/site/chico-thai-cuisine" target="_blank" rel="noopener">Order</a>
+        <a class="btn btn-ghost btn-sm" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">Order</a>
       </div>
       <div class="mitems">
-        <div class="mi" data-search="pad thai rice noodles with tofu, egg, carrots, green onion, bean sprouts, roasted peanut. noodles" data-v="1" data-gf="1" data-s="1">
+        <a class="mi" data-search="pad thai rice noodles with tofu, egg, carrots, green onion, bean sprouts, roasted peanut. noodles" data-v="1" data-gf="1" data-s="1" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Pad Thai <span class="chilis" title="Spice level 1 of 3" aria-label="Spice level 1 of 3"><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg></span> <span class="tags"><span class="tg tg-v">Veg option</span><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$18.95</div>
           <p class="mi-desc">Rice noodles with tofu, egg, carrots, green onion, bean sprouts, roasted peanut.</p>
-        </div>
-        <div class="mi" data-search="pad see ew stir-fried flat noodles with egg, carrots, broccoli and mushrooms. noodles" data-v="1" data-gf="0" data-s="0">
+        </a>
+        <a class="mi" data-search="pad see ew stir-fried flat noodles with egg, carrots, broccoli and mushrooms. noodles" data-v="1" data-gf="0" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Pad See Ew  <span class="tags"><span class="tg tg-v">Veg option</span></span></div>
           <div class="mi-price">$18.95</div>
           <p class="mi-desc">Stir-fried flat noodles with egg, carrots, broccoli and mushrooms.</p>
-        </div>
-        <div class="mi" data-search="drunken noodles stir-fried flat noodle, jalapeño, onions, basil, carrots, red bell peppers. noodles" data-v="1" data-gf="0" data-s="3">
+        </a>
+        <a class="mi" data-search="drunken noodles stir-fried flat noodle, jalapeño, onions, basil, carrots, red bell peppers. noodles" data-v="1" data-gf="0" data-s="3" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Drunken Noodles <span class="chilis" title="Spice level 3 of 3" aria-label="Spice level 3 of 3"><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg></span> <span class="tags"><span class="tg tg-v">Veg option</span></span></div>
           <div class="mi-price">$18.95</div>
           <p class="mi-desc">Stir-fried flat noodle, jalapeño, onions, basil, carrots, red bell peppers.</p>
-        </div>
-        <div class="mi" data-search="chow mein stir-fried yellow noodle with onions, carrots, broccoli and cabbage. noodles" data-v="1" data-gf="0" data-s="0">
+        </a>
+        <a class="mi" data-search="chow mein stir-fried yellow noodle with onions, carrots, broccoli and cabbage. noodles" data-v="1" data-gf="0" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Chow Mein  <span class="tags"><span class="tg tg-v">Veg option</span></span></div>
           <div class="mi-price">$18.95</div>
           <p class="mi-desc">Stir-fried yellow noodle with onions, carrots, broccoli and cabbage.</p>
-        </div>
-        <div class="mi" data-search="spicy chow mein yellow noodle, jalapeño, onion, carrots, basil, bamboo, green beans, cashew. noodles" data-v="1" data-gf="0" data-s="3">
+        </a>
+        <a class="mi" data-search="spicy chow mein yellow noodle, jalapeño, onion, carrots, basil, bamboo, green beans, cashew. noodles" data-v="1" data-gf="0" data-s="3" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Spicy Chow Mein <span class="chilis" title="Spice level 3 of 3" aria-label="Spice level 3 of 3"><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg></span> <span class="tags"><span class="tg tg-v">Veg option</span></span></div>
           <div class="mi-price">$18.95</div>
           <p class="mi-desc">Yellow noodle, jalapeño, onion, carrots, basil, bamboo, green beans, cashew.</p>
-        </div></div>
+        </a></div>
     </section>
     <section class="mcat" id="rice">
       <div class="mcat-head">
         <div><h2 class="h-m">Fried Rice</h2><p>Jasmine rice, high heat</p></div>
-        <a class="btn btn-ghost btn-sm" href="https://order.boons.io/site/chico-thai-cuisine" target="_blank" rel="noopener">Order</a>
+        <a class="btn btn-ghost btn-sm" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">Order</a>
       </div>
       <div class="mitems">
-        <div class="mi" data-search="thai fried rice pan-steamed rice with egg, carrots, onions, cilantro and green onions. fried rice" data-v="1" data-gf="1" data-s="0">
+        <a class="mi" data-search="thai fried rice pan-steamed rice with egg, carrots, onions, cilantro and green onions. fried rice" data-v="1" data-gf="1" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Thai Fried Rice  <span class="tags"><span class="tg tg-v">Veg option</span><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$18.95</div>
           <p class="mi-desc">Pan-steamed rice with egg, carrots, onions, cilantro and green onions.</p>
-        </div>
-        <div class="mi" data-search="basil fried rice jalapeño, onions, carrots, green beans, basil, bamboo shoots and cilantro. fried rice" data-v="1" data-gf="1" data-s="3">
+        </a>
+        <a class="mi" data-search="basil fried rice jalapeño, onions, carrots, green beans, basil, bamboo shoots and cilantro. fried rice" data-v="1" data-gf="1" data-s="3" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Basil Fried Rice <span class="chilis" title="Spice level 3 of 3" aria-label="Spice level 3 of 3"><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg></span> <span class="tags"><span class="tg tg-v">Veg option</span><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$18.95</div>
           <p class="mi-desc">Jalapeño, onions, carrots, green beans, basil, bamboo shoots and cilantro.</p>
-        </div>
-        <div class="mi" data-search="pineapple fried rice egg, onions, carrots, raisins, pineapple, curry powder, cilantro, cashew nuts. fried rice" data-v="1" data-gf="1" data-s="0">
+        </a>
+        <a class="mi" data-search="pineapple fried rice egg, onions, carrots, raisins, pineapple, curry powder, cilantro, cashew nuts. fried rice" data-v="1" data-gf="1" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Pineapple Fried Rice  <span class="tags"><span class="tg tg-v">Veg option</span><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$17.95</div>
           <p class="mi-desc">Egg, onions, carrots, raisins, pineapple, curry powder, cilantro, cashew nuts.</p>
-        </div></div>
+        </a></div>
     </section>
     <section class="mcat" id="chef">
       <div class="mcat-head">
         <div><h2 class="h-m">Chef&rsquo;s Suggestions</h2><p>The plates we are known for</p></div>
-        <a class="btn btn-ghost btn-sm" href="https://order.boons.io/site/chico-thai-cuisine" target="_blank" rel="noopener">Order</a>
+        <a class="btn btn-ghost btn-sm" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">Order</a>
       </div>
       <div class="mitems">
-        <div class="mi" data-search="clay pot prawns sautéed prawns, bean thread noodles, cabbage, black mushroom, onion, carrot. chef's suggestions" data-v="0" data-gf="0" data-s="0">
+        <a class="mi" data-search="clay pot prawns sautéed prawns, bean thread noodles, cabbage, black mushroom, onion, carrot. chef's suggestions" data-v="0" data-gf="0" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Clay Pot Prawns  <span class="tags"></span></div>
           <div class="mi-price">$23.95</div>
           <p class="mi-desc">Sautéed prawns, bean thread noodles, cabbage, black mushroom, onion, carrot.</p>
-        </div>
-        <div class="mi" data-search="what a com battered prawns & chicken in sweet chili sauce, mango, red bell, cashew nuts. chef's suggestions" data-v="0" data-gf="0" data-s="1">
+        </a>
+        <a class="mi" data-search="what a com battered prawns & chicken in sweet chili sauce, mango, red bell, cashew nuts. chef's suggestions" data-v="0" data-gf="0" data-s="1" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">What A Com <span class="chilis" title="Spice level 1 of 3" aria-label="Spice level 1 of 3"><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg></span> <span class="tags"></span></div>
           <div class="mi-price">$23.95</div>
           <p class="mi-desc">Battered prawns &amp; chicken in sweet chili sauce, mango, red bell, cashew nuts.</p>
-        </div>
-        <div class="mi" data-search="super prawns jumbo prawns marinated with massaman curry, onions, cashew nut and avocado. chef's suggestions" data-v="0" data-gf="1" data-s="1">
+        </a>
+        <a class="mi" data-search="super prawns jumbo prawns marinated with massaman curry, onions, cashew nut and avocado. chef's suggestions" data-v="0" data-gf="1" data-s="1" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Super Prawns <span class="chilis" title="Spice level 1 of 3" aria-label="Spice level 1 of 3"><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg></span> <span class="tags"><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$23.95</div>
           <p class="mi-desc">Jumbo prawns marinated with massaman curry, onions, cashew nut and avocado.</p>
-        </div>
-        <div class="mi" data-search="garlic jumbo prawns battered jumbo prawns in garlic & black pepper sauce, lettuce, cilantro. chef's suggestions" data-v="0" data-gf="0" data-s="0">
+        </a>
+        <a class="mi" data-search="garlic jumbo prawns battered jumbo prawns in garlic & black pepper sauce, lettuce, cilantro. chef's suggestions" data-v="0" data-gf="0" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Garlic Jumbo Prawns  <span class="tags"></span></div>
           <div class="mi-price">$23.95</div>
           <p class="mi-desc">Battered jumbo prawns in garlic &amp; black pepper sauce, lettuce, cilantro.</p>
-        </div>
-        <div class="mi" data-search="salmon salad grilled salmon with tamarind sauce, lettuce, mango, red onion, cashew nuts. chef's suggestions" data-v="0" data-gf="1" data-s="1">
+        </a>
+        <a class="mi" data-search="salmon salad grilled salmon with tamarind sauce, lettuce, mango, red onion, cashew nuts. chef's suggestions" data-v="0" data-gf="1" data-s="1" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Salmon Salad <span class="chilis" title="Spice level 1 of 3" aria-label="Spice level 1 of 3"><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg></span> <span class="tags"><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$23.95</div>
           <p class="mi-desc">Grilled salmon with tamarind sauce, lettuce, mango, red onion, cashew nuts.</p>
-        </div>
-        <div class="mi" data-search="salmon rad prik battered salmon over vegetables, spicy sauce, red bell and crispy basil. chef's suggestions" data-v="0" data-gf="0" data-s="3">
+        </a>
+        <a class="mi" data-search="salmon rad prik battered salmon over vegetables, spicy sauce, red bell and crispy basil. chef's suggestions" data-v="0" data-gf="0" data-s="3" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Salmon Rad Prik <span class="chilis" title="Spice level 3 of 3" aria-label="Spice level 3 of 3"><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg></span> <span class="tags"></span></div>
           <div class="mi-price">$23.95</div>
           <p class="mi-desc">Battered salmon over vegetables, spicy sauce, red bell and crispy basil.</p>
-        </div>
-        <div class="mi" data-search="salmon teriyaki grilled salmon over broccoli, carrots, cabbage and steamed white rice. chef's suggestions" data-v="0" data-gf="0" data-s="0">
+        </a>
+        <a class="mi" data-search="salmon teriyaki grilled salmon over broccoli, carrots, cabbage and steamed white rice. chef's suggestions" data-v="0" data-gf="0" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Salmon Teriyaki  <span class="tags"></span></div>
           <div class="mi-price">$23.95</div>
           <p class="mi-desc">Grilled salmon over broccoli, carrots, cabbage and steamed white rice.</p>
-        </div>
-        <div class="mi" data-search="panang salmon grilled salmon in red curry and peanut sauce, green beans, carrots, broccoli. chef's suggestions" data-v="0" data-gf="1" data-s="2">
+        </a>
+        <a class="mi" data-search="panang salmon grilled salmon in red curry and peanut sauce, green beans, carrots, broccoli. chef's suggestions" data-v="0" data-gf="1" data-s="2" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Panang Salmon <span class="chilis" title="Spice level 2 of 3" aria-label="Spice level 2 of 3"><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg></span> <span class="tags"><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$25.95</div>
           <p class="mi-desc">Grilled salmon in red curry and peanut sauce, green beans, carrots, broccoli.</p>
-        </div>
-        <div class="mi" data-search="seafood deluxe onions, green beans, cauliflower, carrots, red bell, green onions, chili paste. chef's suggestions" data-v="0" data-gf="1" data-s="2">
+        </a>
+        <a class="mi" data-search="seafood deluxe onions, green beans, cauliflower, carrots, red bell, green onions, chili paste. chef's suggestions" data-v="0" data-gf="1" data-s="2" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Seafood Deluxe <span class="chilis" title="Spice level 2 of 3" aria-label="Spice level 2 of 3"><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg></span> <span class="tags"><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$24.95</div>
           <p class="mi-desc">Onions, green beans, cauliflower, carrots, red bell, green onions, chili paste.</p>
-        </div>
-        <div class="mi" data-search="spicy seafood battered seafood, onion, red bell, bamboo, eggplant, chili, crispy basil. chef's suggestions" data-v="0" data-gf="0" data-s="3">
+        </a>
+        <a class="mi" data-search="spicy seafood battered seafood, onion, red bell, bamboo, eggplant, chili, crispy basil. chef's suggestions" data-v="0" data-gf="0" data-s="3" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Spicy Seafood <span class="chilis" title="Spice level 3 of 3" aria-label="Spice level 3 of 3"><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg></span> <span class="tags"></span></div>
           <div class="mi-price">$24.95</div>
           <p class="mi-desc">Battered seafood, onion, red bell, bamboo, eggplant, chili, crispy basil.</p>
-        </div>
-        <div class="mi" data-search="honey duck honey roasted duck with steamed vegetables and ginger soy sauce. chef's suggestions" data-v="0" data-gf="0" data-s="0">
+        </a>
+        <a class="mi" data-search="honey duck honey roasted duck with steamed vegetables and ginger soy sauce. chef's suggestions" data-v="0" data-gf="0" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Honey Duck  <span class="tags"></span></div>
           <div class="mi-price">$27.95</div>
           <p class="mi-desc">Honey roasted duck with steamed vegetables and ginger soy sauce.</p>
-        </div>
-        <div class="mi" data-search="rack of lamb grilled rack of lamb with red bell peppers, onions, mushroom and basil. chef's suggestions" data-v="0" data-gf="1" data-s="1">
+        </a>
+        <a class="mi" data-search="rack of lamb grilled rack of lamb with red bell peppers, onions, mushroom and basil. chef's suggestions" data-v="0" data-gf="1" data-s="1" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Rack of Lamb <span class="chilis" title="Spice level 1 of 3" aria-label="Spice level 1 of 3"><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg></span> <span class="tags"><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$31.95</div>
           <p class="mi-desc">Grilled rack of lamb with red bell peppers, onions, mushroom and basil.</p>
-        </div>
-        <div class="mi" data-search="crying tiger beef grilled beef steak marinated in garlic and black pepper, tamarind sauce, salad. chef's suggestions" data-v="0" data-gf="1" data-s="2">
+        </a>
+        <a class="mi" data-search="crying tiger beef grilled beef steak marinated in garlic and black pepper, tamarind sauce, salad. chef's suggestions" data-v="0" data-gf="1" data-s="2" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Crying Tiger Beef <span class="chilis" title="Spice level 2 of 3" aria-label="Spice level 2 of 3"><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg></span> <span class="tags"><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$31.95</div>
           <p class="mi-desc">Grilled beef steak marinated in garlic and black pepper, tamarind sauce, salad.</p>
-        </div></div>
+        </a></div>
     </section>
     <section class="mcat" id="wok">
       <div class="mcat-head">
         <div><h2 class="h-m">Sautéed &amp; Grilled</h2><p>Choose your protein</p></div>
-        <a class="btn btn-ghost btn-sm" href="https://order.boons.io/site/chico-thai-cuisine" target="_blank" rel="noopener">Order</a>
+        <a class="btn btn-ghost btn-sm" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">Order</a>
       </div>
       <div class="mitems">
-        <div class="mi" data-search="basil sautéed with onion, red bell, jalapeño and sweet basil. sautéed & grilled" data-v="1" data-gf="1" data-s="3">
+        <a class="mi" data-search="basil sautéed with onion, red bell, jalapeño and sweet basil. sautéed & grilled" data-v="1" data-gf="1" data-s="3" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Basil <span class="chilis" title="Spice level 3 of 3" aria-label="Spice level 3 of 3"><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg></span> <span class="tags"><span class="tg tg-v">Veg option</span><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$18.95</div>
           <p class="mi-desc">Sautéed with onion, red bell, jalapeño and sweet basil.</p>
-        </div>
-        <div class="mi" data-search="cashew nut cashew nuts with chili paste, carrots, red bell, onions, mushrooms. sautéed & grilled" data-v="1" data-gf="0" data-s="1">
+        </a>
+        <a class="mi" data-search="cashew nut cashew nuts with chili paste, carrots, red bell, onions, mushrooms. sautéed & grilled" data-v="1" data-gf="0" data-s="1" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Cashew Nut <span class="chilis" title="Spice level 1 of 3" aria-label="Spice level 1 of 3"><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg></span> <span class="tags"><span class="tg tg-v">Veg option</span></span></div>
           <div class="mi-price">$18.95</div>
           <p class="mi-desc">Cashew nuts with chili paste, carrots, red bell, onions, mushrooms.</p>
-        </div>
-        <div class="mi" data-search="garlic and pepper garlic and black pepper sauce with steamed broccoli, carrots and cabbage. sautéed & grilled" data-v="1" data-gf="1" data-s="0">
+        </a>
+        <a class="mi" data-search="garlic and pepper garlic and black pepper sauce with steamed broccoli, carrots and cabbage. sautéed & grilled" data-v="1" data-gf="1" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Garlic and Pepper  <span class="tags"><span class="tg tg-v">Veg option</span><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$18.95</div>
           <p class="mi-desc">Garlic and black pepper sauce with steamed broccoli, carrots and cabbage.</p>
-        </div>
-        <div class="mi" data-search="pra ram sautéed in house sauce over steamed vegetables, topped with peanut sauce. sautéed & grilled" data-v="1" data-gf="1" data-s="0">
+        </a>
+        <a class="mi" data-search="pra ram sautéed in house sauce over steamed vegetables, topped with peanut sauce. sautéed & grilled" data-v="1" data-gf="1" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Pra Ram  <span class="tags"><span class="tg tg-v">Veg option</span><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$18.95</div>
           <p class="mi-desc">Sautéed in house sauce over steamed vegetables, topped with peanut sauce.</p>
-        </div>
-        <div class="mi" data-search="ginger fresh ginger, red bell peppers, onions, black mushrooms, carrots, green onions. sautéed & grilled" data-v="1" data-gf="1" data-s="0">
+        </a>
+        <a class="mi" data-search="ginger fresh ginger, red bell peppers, onions, black mushrooms, carrots, green onions. sautéed & grilled" data-v="1" data-gf="1" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Ginger  <span class="tags"><span class="tg tg-v">Veg option</span><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$18.95</div>
           <p class="mi-desc">Fresh ginger, red bell peppers, onions, black mushrooms, carrots, green onions.</p>
-        </div>
-        <div class="mi" data-search="eggplant sautéed eggplant, onions, carrots, jalapeño and basil. sautéed & grilled" data-v="1" data-gf="1" data-s="2">
+        </a>
+        <a class="mi" data-search="eggplant sautéed eggplant, onions, carrots, jalapeño and basil. sautéed & grilled" data-v="1" data-gf="1" data-s="2" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Eggplant <span class="chilis" title="Spice level 2 of 3" aria-label="Spice level 2 of 3"><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg></span> <span class="tags"><span class="tg tg-v">Veg option</span><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$18.95</div>
           <p class="mi-desc">Sautéed eggplant, onions, carrots, jalapeño and basil.</p>
-        </div>
-        <div class="mi" data-search="broccoli broccoli and carrots in a light gravy sauce. sautéed & grilled" data-v="1" data-gf="0" data-s="0">
+        </a>
+        <a class="mi" data-search="broccoli broccoli and carrots in a light gravy sauce. sautéed & grilled" data-v="1" data-gf="0" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Broccoli  <span class="tags"><span class="tg tg-v">Veg option</span></span></div>
           <div class="mi-price">$18.95</div>
           <p class="mi-desc">Broccoli and carrots in a light gravy sauce.</p>
-        </div>
-        <div class="mi" data-search="string beans sautéed green beans and carrots in red curry sauce. sautéed & grilled" data-v="1" data-gf="1" data-s="2">
+        </a>
+        <a class="mi" data-search="string beans sautéed green beans and carrots in red curry sauce. sautéed & grilled" data-v="1" data-gf="1" data-s="2" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">String Beans <span class="chilis" title="Spice level 2 of 3" aria-label="Spice level 2 of 3"><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg></span> <span class="tags"><span class="tg tg-v">Veg option</span><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$18.95</div>
           <p class="mi-desc">Sautéed green beans and carrots in red curry sauce.</p>
-        </div>
-        <div class="mi" data-search="vegetable deluxe carrots, mushrooms, cabbage, cauliflower, broccoli, green bean, bean sprout. sautéed & grilled" data-v="1" data-gf="1" data-s="0">
+        </a>
+        <a class="mi" data-search="vegetable deluxe carrots, mushrooms, cabbage, cauliflower, broccoli, green bean, bean sprout. sautéed & grilled" data-v="1" data-gf="1" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Vegetable Deluxe  <span class="tags"><span class="tg tg-v">Veg option</span><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$18.95</div>
           <p class="mi-desc">Carrots, mushrooms, cabbage, cauliflower, broccoli, green bean, bean sprout.</p>
-        </div>
-        <div class="mi" data-search="orange chicken battered fried chicken coated in fresh orange, with steamed vegetables. sautéed & grilled" data-v="0" data-gf="0" data-s="0">
+        </a>
+        <a class="mi" data-search="orange chicken battered fried chicken coated in fresh orange, with steamed vegetables. sautéed & grilled" data-v="0" data-gf="0" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Orange Chicken  <span class="tags"></span></div>
           <div class="mi-price">$19.95</div>
           <p class="mi-desc">Battered fried chicken coated in fresh orange, with steamed vegetables.</p>
-        </div>
-        <div class="mi" data-search="thai bbq chicken grilled chicken thigh in thai herbs, vegetables, sweet & sour and thai sauce. sautéed & grilled" data-v="0" data-gf="1" data-s="1">
+        </a>
+        <a class="mi" data-search="thai bbq chicken grilled chicken thigh in thai herbs, vegetables, sweet & sour and thai sauce. sautéed & grilled" data-v="0" data-gf="1" data-s="1" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Thai BBQ Chicken <span class="chilis" title="Spice level 1 of 3" aria-label="Spice level 1 of 3"><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg></span> <span class="tags"><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$19.95</div>
           <p class="mi-desc">Grilled chicken thigh in Thai herbs, vegetables, sweet &amp; sour and Thai sauce.</p>
-        </div>
-        <div class="mi" data-search="teriyaki chicken grilled chicken thigh, broccoli, carrots, cabbage, teriyaki sauce and rice. sautéed & grilled" data-v="0" data-gf="0" data-s="0">
+        </a>
+        <a class="mi" data-search="teriyaki chicken grilled chicken thigh, broccoli, carrots, cabbage, teriyaki sauce and rice. sautéed & grilled" data-v="0" data-gf="0" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Teriyaki Chicken  <span class="tags"></span></div>
           <div class="mi-price">$20.95</div>
           <p class="mi-desc">Grilled chicken thigh, broccoli, carrots, cabbage, teriyaki sauce and rice.</p>
-        </div>
-        <div class="mi" data-search="hot pepper beef black pepper, onions, red bell peppers, carrots and green onions. sautéed & grilled" data-v="0" data-gf="1" data-s="2">
+        </a>
+        <a class="mi" data-search="hot pepper beef black pepper, onions, red bell peppers, carrots and green onions. sautéed & grilled" data-v="0" data-gf="1" data-s="2" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Hot Pepper Beef <span class="chilis" title="Spice level 2 of 3" aria-label="Spice level 2 of 3"><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg></span> <span class="tags"><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$20.95</div>
           <p class="mi-desc">Black pepper, onions, red bell peppers, carrots and green onions.</p>
-        </div>
-        <div class="mi" data-search="crispy chicken crispy chicken with ginger rice, served with sweet sauce. sautéed & grilled" data-v="0" data-gf="0" data-s="0">
+        </a>
+        <a class="mi" data-search="crispy chicken crispy chicken with ginger rice, served with sweet sauce. sautéed & grilled" data-v="0" data-gf="0" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Crispy Chicken  <span class="tags"></span></div>
           <div class="mi-price">$21.95</div>
           <p class="mi-desc">Crispy chicken with ginger rice, served with sweet sauce.</p>
-        </div></div>
+        </a></div>
     </section>
     <section class="mcat" id="curries">
       <div class="mcat-head">
         <div><h2 class="h-m">Curries</h2><p>Simmered in coconut milk</p></div>
-        <a class="btn btn-ghost btn-sm" href="https://order.boons.io/site/chico-thai-cuisine" target="_blank" rel="noopener">Order</a>
+        <a class="btn btn-ghost btn-sm" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">Order</a>
       </div>
       <div class="mitems">
-        <div class="mi" data-search="yellow curry thai style yellow curry with potatoes, carrots and onions. curries" data-v="1" data-gf="1" data-s="1">
+        <a class="mi" data-search="yellow curry thai style yellow curry with potatoes, carrots and onions. curries" data-v="1" data-gf="1" data-s="1" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Yellow Curry <span class="chilis" title="Spice level 1 of 3" aria-label="Spice level 1 of 3"><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg></span> <span class="tags"><span class="tg tg-v">Veg option</span><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$18.95</div>
           <p class="mi-desc">Thai style yellow curry with potatoes, carrots and onions.</p>
-        </div>
-        <div class="mi" data-search="green curry green curry, bamboo shoots, red bell, carrots, green bean, eggplant, basil. curries" data-v="1" data-gf="1" data-s="3">
+        </a>
+        <a class="mi" data-search="green curry green curry, bamboo shoots, red bell, carrots, green bean, eggplant, basil. curries" data-v="1" data-gf="1" data-s="3" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Green Curry <span class="chilis" title="Spice level 3 of 3" aria-label="Spice level 3 of 3"><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg></span> <span class="tags"><span class="tg tg-v">Veg option</span><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$18.95</div>
           <p class="mi-desc">Green curry, bamboo shoots, red bell, carrots, green bean, eggplant, basil.</p>
-        </div>
-        <div class="mi" data-search="red curry red curry, carrots, bamboo shoots, red bell, green beans and basil. curries" data-v="1" data-gf="1" data-s="2">
+        </a>
+        <a class="mi" data-search="red curry red curry, carrots, bamboo shoots, red bell, green beans and basil. curries" data-v="1" data-gf="1" data-s="2" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Red Curry <span class="chilis" title="Spice level 2 of 3" aria-label="Spice level 2 of 3"><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg></span> <span class="tags"><span class="tg tg-v">Veg option</span><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$18.95</div>
           <p class="mi-desc">Red curry, carrots, bamboo shoots, red bell, green beans and basil.</p>
-        </div>
-        <div class="mi" data-search="pumpkin curry red curry with carrots, pumpkin, red bell, green beans and basil. curries" data-v="1" data-gf="1" data-s="2">
+        </a>
+        <a class="mi" data-search="pumpkin curry red curry with carrots, pumpkin, red bell, green beans and basil. curries" data-v="1" data-gf="1" data-s="2" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Pumpkin Curry <span class="chilis" title="Spice level 2 of 3" aria-label="Spice level 2 of 3"><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg></span> <span class="tags"><span class="tg tg-v">Veg option</span><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$18.95</div>
           <p class="mi-desc">Red curry with carrots, pumpkin, red bell, green beans and basil.</p>
-        </div>
-        <div class="mi" data-search="panang curry panang curry with peanut sauce, broccoli, carrots and green beans. curries" data-v="1" data-gf="1" data-s="2">
+        </a>
+        <a class="mi" data-search="panang curry panang curry with peanut sauce, broccoli, carrots and green beans. curries" data-v="1" data-gf="1" data-s="2" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Panang Curry <span class="chilis" title="Spice level 2 of 3" aria-label="Spice level 2 of 3"><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg></span> <span class="tags"><span class="tg tg-v">Veg option</span><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$18.95</div>
           <p class="mi-desc">Panang curry with peanut sauce, broccoli, carrots and green beans.</p>
-        </div>
-        <div class="mi" data-search="roasted duck curry roasted duck, pineapple, tomatoes, red bell, carrots, green bean, basil. curries" data-v="0" data-gf="1" data-s="2">
+        </a>
+        <a class="mi" data-search="roasted duck curry roasted duck, pineapple, tomatoes, red bell, carrots, green bean, basil. curries" data-v="0" data-gf="1" data-s="2" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Roasted Duck Curry <span class="chilis" title="Spice level 2 of 3" aria-label="Spice level 2 of 3"><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg></span> <span class="tags"><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$23.95</div>
           <p class="mi-desc">Roasted duck, pineapple, tomatoes, red bell, carrots, green bean, basil.</p>
-        </div>
-        <div class="mi" data-search="lamb curry southern thai yellow curry with coconut milk, potatoes, carrots and onions. curries" data-v="0" data-gf="1" data-s="1">
+        </a>
+        <a class="mi" data-search="lamb curry southern thai yellow curry with coconut milk, potatoes, carrots and onions. curries" data-v="0" data-gf="1" data-s="1" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Lamb Curry <span class="chilis" title="Spice level 1 of 3" aria-label="Spice level 1 of 3"><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg></span> <span class="tags"><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$23.95</div>
           <p class="mi-desc">Southern Thai yellow curry with coconut milk, potatoes, carrots and onions.</p>
-        </div>
-        <div class="mi" data-search="sea paradise curry seafood combination with eggplant, red bell, bamboo, red curry, crispy basil. curries" data-v="0" data-gf="1" data-s="2">
+        </a>
+        <a class="mi" data-search="sea paradise curry seafood combination with eggplant, red bell, bamboo, red curry, crispy basil. curries" data-v="0" data-gf="1" data-s="2" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Sea Paradise Curry <span class="chilis" title="Spice level 2 of 3" aria-label="Spice level 2 of 3"><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg><svg viewBox="0 0 24 24"><path d="M13.5 3.2c.6-1 2-1.4 2.7-.5.6.8.2 1.8-.6 2.3.9.6 1.6 1.6 1.6 3 0 4.7-4.3 12-9.8 13.4-1.4.4-2.8-.4-2.8-1.6 0-1 .8-1.6 1.8-1.8C10.6 17 14 12 14 8.2c0-1.4-.3-2.2-.5-2.6-.4-.7-.4-1.7 0-2.4Z"/></svg></span> <span class="tags"><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$23.95</div>
           <p class="mi-desc">Seafood combination with eggplant, red bell, bamboo, red curry, crispy basil.</p>
-        </div></div>
+        </a></div>
     </section>
     <section class="mcat" id="sides">
       <div class="mcat-head">
         <div><h2 class="h-m">Side Orders</h2></div>
-        <a class="btn btn-ghost btn-sm" href="https://order.boons.io/site/chico-thai-cuisine" target="_blank" rel="noopener">Order</a>
+        <a class="btn btn-ghost btn-sm" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">Order</a>
       </div>
       <div class="mitems">
-        <div class="mi" data-search="white rice  side orders" data-v="1" data-gf="1" data-s="0">
+        <a class="mi" data-search="white rice  side orders" data-v="1" data-gf="1" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">White Rice  <span class="tags"><span class="tg tg-v">Veg option</span><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$3.50</div>
           
-        </div>
-        <div class="mi" data-search="brown rice  side orders" data-v="1" data-gf="1" data-s="0">
+        </a>
+        <a class="mi" data-search="brown rice  side orders" data-v="1" data-gf="1" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Brown Rice  <span class="tags"><span class="tg tg-v">Veg option</span><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$4.50</div>
           
-        </div>
-        <div class="mi" data-search="sticky rice  side orders" data-v="1" data-gf="1" data-s="0">
+        </a>
+        <a class="mi" data-search="sticky rice  side orders" data-v="1" data-gf="1" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Sticky Rice  <span class="tags"><span class="tg tg-v">Veg option</span><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$4.50</div>
           
-        </div>
-        <div class="mi" data-search="peanut sauce  side orders" data-v="1" data-gf="1" data-s="0">
+        </a>
+        <a class="mi" data-search="peanut sauce  side orders" data-v="1" data-gf="1" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Peanut Sauce  <span class="tags"><span class="tg tg-v">Veg option</span><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$3.50</div>
           
-        </div>
-        <div class="mi" data-search="sweet and sour sauce  side orders" data-v="1" data-gf="1" data-s="0">
+        </a>
+        <a class="mi" data-search="sweet and sour sauce  side orders" data-v="1" data-gf="1" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Sweet and Sour Sauce  <span class="tags"><span class="tg tg-v">Veg option</span><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$2.50</div>
           
-        </div>
-        <div class="mi" data-search="cucumber salad  side orders" data-v="1" data-gf="1" data-s="0">
+        </a>
+        <a class="mi" data-search="cucumber salad  side orders" data-v="1" data-gf="1" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Cucumber Salad  <span class="tags"><span class="tg tg-v">Veg option</span><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$5.50</div>
           
-        </div>
-        <div class="mi" data-search="steamed noodles  side orders" data-v="1" data-gf="0" data-s="0">
+        </a>
+        <a class="mi" data-search="steamed noodles  side orders" data-v="1" data-gf="0" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Steamed Noodles  <span class="tags"><span class="tg tg-v">Veg option</span></span></div>
           <div class="mi-price">$3.50</div>
           
-        </div>
-        <div class="mi" data-search="steamed tofu  side orders" data-v="1" data-gf="1" data-s="0">
+        </a>
+        <a class="mi" data-search="steamed tofu  side orders" data-v="1" data-gf="1" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Steamed Tofu  <span class="tags"><span class="tg tg-v">Veg option</span><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$3.00</div>
           
-        </div>
-        <div class="mi" data-search="steamed vegetables  side orders" data-v="1" data-gf="1" data-s="0">
+        </a>
+        <a class="mi" data-search="steamed vegetables  side orders" data-v="1" data-gf="1" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Steamed Vegetables  <span class="tags"><span class="tg tg-v">Veg option</span><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$5.50</div>
           
-        </div>
-        <div class="mi" data-search="sun egg  side orders" data-v="1" data-gf="1" data-s="0">
+        </a>
+        <a class="mi" data-search="sun egg  side orders" data-v="1" data-gf="1" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Sun Egg  <span class="tags"><span class="tg tg-v">Veg option</span><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$3.50</div>
           
-        </div></div>
+        </a></div>
     </section>
     <section class="mcat" id="desserts">
       <div class="mcat-head">
         <div><h2 class="h-m">Desserts</h2><p>Finish sweet</p></div>
-        <a class="btn btn-ghost btn-sm" href="https://order.boons.io/site/chico-thai-cuisine" target="_blank" rel="noopener">Order</a>
+        <a class="btn btn-ghost btn-sm" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">Order</a>
       </div>
       <div class="mitems">
-        <div class="mi" data-search="sweet sticky rice with mango the one everybody orders. coconut sticky rice, ripe mango. desserts" data-v="1" data-gf="1" data-s="0">
+        <a class="mi" data-search="sweet sticky rice with mango the one everybody orders. coconut sticky rice, ripe mango. desserts" data-v="1" data-gf="1" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Sweet Sticky Rice with Mango  <span class="tags"><span class="tg tg-v">Veg option</span><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$11.95</div>
           <p class="mi-desc">The one everybody orders. Coconut sticky rice, ripe mango.</p>
-        </div>
-        <div class="mi" data-search="fresh mango with ice cream  desserts" data-v="1" data-gf="1" data-s="0">
+        </a>
+        <a class="mi" data-search="fresh mango with ice cream  desserts" data-v="1" data-gf="1" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Fresh Mango with Ice Cream  <span class="tags"><span class="tg tg-v">Veg option</span><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$11.95</div>
           
-        </div>
-        <div class="mi" data-search="fried banana with ice cream  desserts" data-v="1" data-gf="0" data-s="0">
+        </a>
+        <a class="mi" data-search="fried banana with ice cream  desserts" data-v="1" data-gf="0" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Fried Banana with Ice Cream  <span class="tags"><span class="tg tg-v">Veg option</span></span></div>
           <div class="mi-price">$10.95</div>
           
-        </div>
-        <div class="mi" data-search="sweet sticky rice with ice cream  desserts" data-v="1" data-gf="1" data-s="0">
+        </a>
+        <a class="mi" data-search="sweet sticky rice with ice cream  desserts" data-v="1" data-gf="1" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Sweet Sticky Rice with Ice Cream  <span class="tags"><span class="tg tg-v">Veg option</span><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$10.95</div>
           
-        </div>
-        <div class="mi" data-search="roti with ice cream  desserts" data-v="1" data-gf="0" data-s="0">
+        </a>
+        <a class="mi" data-search="roti with ice cream  desserts" data-v="1" data-gf="0" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Roti with Ice Cream  <span class="tags"><span class="tg tg-v">Veg option</span></span></div>
           <div class="mi-price">$10.95</div>
           
-        </div>
-        <div class="mi" data-search="coconut ice cream  desserts" data-v="1" data-gf="1" data-s="0">
+        </a>
+        <a class="mi" data-search="coconut ice cream  desserts" data-v="1" data-gf="1" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Coconut Ice Cream  <span class="tags"><span class="tg tg-v">Veg option</span><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$6.95</div>
           
-        </div></div>
+        </a></div>
     </section>
     <section class="mcat" id="drinks">
       <div class="mcat-head">
         <div><h2 class="h-m">Beverages</h2></div>
-        <a class="btn btn-ghost btn-sm" href="https://order.boons.io/site/chico-thai-cuisine" target="_blank" rel="noopener">Order</a>
+        <a class="btn btn-ghost btn-sm" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">Order</a>
       </div>
       <div class="mitems">
-        <div class="mi" data-search="thai iced tea house-brewed, sweet and creamy. beverages" data-v="1" data-gf="1" data-s="0">
+        <a class="mi" data-search="thai iced tea house-brewed, sweet and creamy. beverages" data-v="1" data-gf="1" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Thai Iced Tea  <span class="tags"><span class="tg tg-v">Veg option</span><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$4.95</div>
           <p class="mi-desc">House-brewed, sweet and creamy.</p>
-        </div>
-        <div class="mi" data-search="thai iced coffee  beverages" data-v="1" data-gf="1" data-s="0">
+        </a>
+        <a class="mi" data-search="thai iced coffee  beverages" data-v="1" data-gf="1" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Thai Iced Coffee  <span class="tags"><span class="tg tg-v">Veg option</span><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$4.95</div>
           
-        </div>
-        <div class="mi" data-search="lychee iced tea  beverages" data-v="1" data-gf="1" data-s="0">
+        </a>
+        <a class="mi" data-search="lychee iced tea  beverages" data-v="1" data-gf="1" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Lychee Iced Tea  <span class="tags"><span class="tg tg-v">Veg option</span><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$4.95</div>
           
-        </div>
-        <div class="mi" data-search="lemon iced tea  beverages" data-v="1" data-gf="1" data-s="0">
+        </a>
+        <a class="mi" data-search="lemon iced tea  beverages" data-v="1" data-gf="1" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Lemon Iced Tea  <span class="tags"><span class="tg tg-v">Veg option</span><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$4.95</div>
           
-        </div>
-        <div class="mi" data-search="arnold palmer  beverages" data-v="1" data-gf="1" data-s="0">
+        </a>
+        <a class="mi" data-search="arnold palmer  beverages" data-v="1" data-gf="1" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Arnold Palmer  <span class="tags"><span class="tg tg-v">Veg option</span><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$4.95</div>
           
-        </div>
-        <div class="mi" data-search="lemonade  beverages" data-v="1" data-gf="1" data-s="0">
+        </a>
+        <a class="mi" data-search="lemonade  beverages" data-v="1" data-gf="1" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Lemonade  <span class="tags"><span class="tg tg-v">Veg option</span><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$3.95</div>
           
-        </div>
-        <div class="mi" data-search="iced tea  beverages" data-v="1" data-gf="1" data-s="0">
+        </a>
+        <a class="mi" data-search="iced tea  beverages" data-v="1" data-gf="1" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Iced Tea <small>unsweetened</small>  <span class="tags"><span class="tg tg-v">Veg option</span><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$3.95</div>
           
-        </div>
-        <div class="mi" data-search="thai hot tea  beverages" data-v="1" data-gf="1" data-s="0">
+        </a>
+        <a class="mi" data-search="thai hot tea  beverages" data-v="1" data-gf="1" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Thai Hot Tea <small>unsweetened</small>  <span class="tags"><span class="tg tg-v">Veg option</span><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$3.95</div>
           
-        </div>
-        <div class="mi" data-search="hot coffee  beverages" data-v="1" data-gf="1" data-s="0">
+        </a>
+        <a class="mi" data-search="hot coffee  beverages" data-v="1" data-gf="1" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Hot Coffee  <span class="tags"><span class="tg tg-v">Veg option</span><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$2.95</div>
           
-        </div>
-        <div class="mi" data-search="hot tea  beverages" data-v="1" data-gf="1" data-s="0">
+        </a>
+        <a class="mi" data-search="hot tea  beverages" data-v="1" data-gf="1" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Hot Tea  <span class="tags"><span class="tg tg-v">Veg option</span><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$2.95</div>
           
-        </div>
-        <div class="mi" data-search="sparkling mineral water  beverages" data-v="1" data-gf="1" data-s="0">
+        </a>
+        <a class="mi" data-search="sparkling mineral water  beverages" data-v="1" data-gf="1" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Sparkling Mineral Water  <span class="tags"><span class="tg tg-v">Veg option</span><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$2.95</div>
           
-        </div>
-        <div class="mi" data-search="coke  beverages" data-v="1" data-gf="1" data-s="0">
+        </a>
+        <a class="mi" data-search="coke  beverages" data-v="1" data-gf="1" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Coke  <span class="tags"><span class="tg tg-v">Veg option</span><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$2.95</div>
           
-        </div>
-        <div class="mi" data-search="diet coke  beverages" data-v="1" data-gf="1" data-s="0">
+        </a>
+        <a class="mi" data-search="diet coke  beverages" data-v="1" data-gf="1" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Diet Coke  <span class="tags"><span class="tg tg-v">Veg option</span><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$2.95</div>
           
-        </div>
-        <div class="mi" data-search="sprite  beverages" data-v="1" data-gf="1" data-s="0">
+        </a>
+        <a class="mi" data-search="sprite  beverages" data-v="1" data-gf="1" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Sprite  <span class="tags"><span class="tg tg-v">Veg option</span><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$2.95</div>
           
-        </div>
-        <div class="mi" data-search="ginger ale  beverages" data-v="1" data-gf="1" data-s="0">
+        </a>
+        <a class="mi" data-search="ginger ale  beverages" data-v="1" data-gf="1" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Ginger Ale  <span class="tags"><span class="tg tg-v">Veg option</span><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$2.95</div>
           
-        </div>
-        <div class="mi" data-search="root beer  beverages" data-v="1" data-gf="1" data-s="0">
+        </a>
+        <a class="mi" data-search="root beer  beverages" data-v="1" data-gf="1" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Root Beer  <span class="tags"><span class="tg tg-v">Veg option</span><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$2.95</div>
           
-        </div>
-        <div class="mi" data-search="dr pepper  beverages" data-v="1" data-gf="1" data-s="0">
+        </a>
+        <a class="mi" data-search="dr pepper  beverages" data-v="1" data-gf="1" data-s="0" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">
           <div class="mi-name">Dr Pepper  <span class="tags"><span class="tg tg-v">Veg option</span><span class="tg tg-gf">GF option</span></span></div>
           <div class="mi-price">$2.95</div>
           
-        </div></div>
+        </a></div>
     </section>
   <p class="muted" style="font-size:.8rem;margin-top:34px;padding-top:18px;border-top:1px solid var(--line)">
     Spice level is how a dish is normally served &mdash; every plate can be cooked mild to Thai hot on request.
@@ -1331,7 +1331,7 @@ body.menu-open .drawer a.dl{animation:dIn .55s var(--ease) forwards}
     <h2 class="h-l">Ready to order?</h2>
     <p>Pickup or delivery &mdash; your order goes straight to our kitchen.</p>
     <div style="display:flex;gap:11px;flex-wrap:wrap;justify-content:center">
-      <a class="btn btn-gold btn-lg" href="https://order.boons.io/site/chico-thai-cuisine" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 4 6v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6l-2-4Z"/><path d="M4 6h16M16 10a4 4 0 0 1-8 0"/></svg> Order Online</a>
+      <a class="btn btn-gold btn-lg" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 4 6v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6l-2-4Z"/><path d="M4 6h16M16 10a4 4 0 0 1-8 0"/></svg> Order Online</a>
       <a class="btn btn-ghost btn-lg" style="color:#fff;border-color:rgba(255,255,255,.3)" href="tel:+15307179108">Call (530) 717-9108</a>
     </div>
   </div>
@@ -1349,7 +1349,7 @@ body.menu-open .drawer a.dl{animation:dIn .55s var(--ease) forwards}
       </div>
       <div>
         <h4>Explore</h4>
-        <ul><li><a href="index.html">Home</a></li><li><a href="menu.html">Menu</a></li><li><a href="market.html">Thai Market</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul>
+        <ul><li><a href="index.html">Home</a></li><li><a href="menu.html">Menu</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul>
       </div>
       <div>
         <h4>Visit us</h4>
@@ -1357,7 +1357,7 @@ body.menu-open .drawer a.dl{animation:dIn .55s var(--ease) forwards}
           <li><a href="https://maps.google.com/?q=407+Walnut+St+Ste+A+Chico+CA+95928" target="_blank" rel="noopener">407 Walnut St., Ste. A-B.<br>Chico, CA 95928</a></li>
           <li><a href="tel:+15307179108">(530) 717-9108</a></li>
           <li><a href="mailto:chicothaicuisine@gmail.com">chicothaicuisine@gmail.com</a></li>
-          <li><a href="https://order.boons.io/site/chico-thai-cuisine" target="_blank" rel="noopener">Order online</a></li>
+          <li><a href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener">Order online</a></li>
         </ul>
       </div>
       <div>
@@ -1390,10 +1390,10 @@ body.menu-open .drawer a.dl{animation:dIn .55s var(--ease) forwards}
 <nav class="dock" aria-label="Quick actions">
   <a href="tel:+15307179108"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg> Call</a>
   <a href="https://maps.google.com/?q=407+Walnut+St+Ste+A+Chico+CA+95928" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> Directions</a>
-  <a class="main" href="https://order.boons.io/site/chico-thai-cuisine" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 4 6v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6l-2-4Z"/><path d="M4 6h16M16 10a4 4 0 0 1-8 0"/></svg> Order Online</a>
+  <a class="main" href="https://order.boons.io/site/chico-thai-cuisine/413/y" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 4 6v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6l-2-4Z"/><path d="M4 6h16M16 10a4 4 0 0 1-8 0"/></svg> Order Online</a>
 </nav>
 
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Restaurant", "name": "Chico Thai Cuisine", "image": "https://www.chicothaicuisine.com/img/slider/slide1.jpg", "logo": "https://www.chicothaicuisine.com/img/logo.png", "url": "https://www.chicothaicuisine.com/", "telephone": "(530) 717-9108", "email": "chicothaicuisine@gmail.com", "servesCuisine": "Thai", "priceRange": "$$", "menu": "https://www.chicothaicuisine.com/menu.html", "acceptsReservations": "False", "address": {"@type": "PostalAddress", "streetAddress": "407 Walnut St, Ste A-B", "addressLocality": "Chico", "addressRegion": "CA", "postalCode": "95928", "addressCountry": "US"}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "opens": "11:00", "closes": "20:30"}], "hasMenu": {"@type": "Menu", "url": "https://www.chicothaicuisine.com/menu.html"}, "potentialAction": {"@type": "OrderAction", "target": {"@type": "EntryPoint", "urlTemplate": "https://order.boons.io/site/chico-thai-cuisine"}}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Restaurant", "name": "Chico Thai Cuisine", "image": "https://www.chicothaicuisine.com/img/slider/slide1.jpg", "logo": "https://www.chicothaicuisine.com/img/logo.png", "url": "https://www.chicothaicuisine.com/", "telephone": "(530) 717-9108", "email": "chicothaicuisine@gmail.com", "servesCuisine": "Thai", "priceRange": "$$", "menu": "https://www.chicothaicuisine.com/menu.html", "acceptsReservations": "False", "address": {"@type": "PostalAddress", "streetAddress": "407 Walnut St, Ste A-B", "addressLocality": "Chico", "addressRegion": "CA", "postalCode": "95928", "addressCountry": "US"}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "opens": "11:00", "closes": "20:30"}], "hasMenu": {"@type": "Menu", "url": "https://www.chicothaicuisine.com/menu.html"}, "potentialAction": {"@type": "OrderAction", "target": {"@type": "EntryPoint", "urlTemplate": "https://order.boons.io/site/chico-thai-cuisine/413/y"}}}</script>
 <script src="accessibility.js"></script>
 <script>var OPEN_FROM=660,OPEN_TO=1230;</script>
 <script>
